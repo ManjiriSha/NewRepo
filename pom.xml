@@ -26,10 +26,13 @@
 				<version>3.0.0</version>
 			</plugin>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>3.3.5</version>
-				<extensions>true</extensions>
+				  <groupId>org.mule.tools.maven</groupId>
+
+  <artifactId>mule-maven-plugin</artifactId>
+
+  <version>3.3.2</version>
+
+  <extensions>true</extensions>
 				<configuration>
 			<cloudHubDeployment>
 				<username>Man2021</username>
