@@ -20,17 +20,16 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 
 <build>
 <plugins>
+
+
 <plugin>
 <groupId>org.mule.tools.maven</groupId>
+
 <artifactId>mule-maven-plugin</artifactId>
+
 <version>3.3.2</version>
+
 <extensions>true</extensions>
-<configuration>
-</configuration>
-</plugin>
-
-<plugin>
-
 <configuration>
 <cloudHubDeployment>
 <username>Man2021</username>
