@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="dc99a3d4-b4a4-4bee-848a-dcf8b549dc1f" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
 	<flow name="cicdFlow" doc:id="b5d8aecf-1915-4a24-88ec-46bd815861b0" >
 		<scheduler doc:name="Scheduler" doc:id="ce0d3d3f-803c-46b1-9661-d36d5ef310b5" >
 			<scheduling-strategy >
@@ -10,5 +14,9 @@
 			</scheduling-strategy>
 		</scheduler>
 		<logger level="INFO" doc:name="Logger" doc:id="6660d2b3-473e-4f52-9462-dba8c1dfb1f9" message="hii Manjiri"/>
+	</flow>
+	<flow name="cicdFlow1" doc:id="c9de24b2-b50f-437a-b76b-41083b7cc5bc" >
+		<http:listener doc:name="Listener" doc:id="b792686c-609a-4b10-8466-1debf84b9528" config-ref="HTTP_Listener_config" path="/test"/>
+		<logger level="INFO" doc:name="Logger" doc:id="e86da6a0-cb56-4055-8b30-dc212c9dec17" message="http listner"/>
 	</flow>
 </mule>
